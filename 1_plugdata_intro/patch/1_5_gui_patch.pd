@@ -1,0 +1,10 @@
+#N canvas 827 239 527 327 12;
+#X obj 338 137 osc~ 440;
+#X obj 338 163 gain~ 1 0 20 0 0.686654;
+#A saved;
+#X obj 333 282 out~;
+#X obj 341 103 hsl 128 17 220 880 0 0 empty empty empty -2 -8 0 10 #e4e4e4 #4d4d4d #373737 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 0 0;
