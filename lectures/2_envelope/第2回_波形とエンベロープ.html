@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-codemirror">.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: medium !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 660px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    margin-top: 2rem;
+    border-bottom: none;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 2rem;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 1em 0;
+    line-height: 1.5;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+/* キャプション用のクラス */
+#write .caption {
+    display: block;        /* ブロック要素として扱う */
+    text-align: center;    /* 文字を中央寄せ */
+    max-width: 100%;       /* 本文の 650px 制限を無視して横いっぱいに広げる */
+    margin: 10px auto 2em; /* 上に10px、左右中央、下に2emの余白 */
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>第2回_波形とエンベロープ</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='第2回-波形とエンベロープ'><span>第2回 波形とエンベロープ</span></h2><p><strong><span>滋賀大学 自主ゼミ「サウンドプログラミング入門」 2026年度 春学期</span></strong></p><p>&nbsp;</p><h2 id='1-今回の目的'><span>1. 今回の目的</span></h2><h3 id='11-今回扱うこと'><span>1.1 今回扱うこと</span></h3><p><span>第1回ではサイン波しか扱えなかったため、音色はあまり選べませんでした。また、DSPをONにすると音がずっと鳴り続けてしまう状態だったので、第2回ではこれらを解決するために以下の3つを扱います。</span></p><ol start='' ><li><p><strong><span>オシレータと波形</span></strong><span> ― 正弦波・鋸歯波・矩形波・三角波・ノイズ</span></p></li><li><p><strong><span>エンベロープ</span></strong><span> ― ADSR の概念、</span><code>[envgen~]</code><span> と </span><code>[function]</code><span> による任意形状のエンベロープ</span></p></li><li><p><strong><span>鍵盤による演奏</span></strong><span> ― </span><code>[keyboard]</code><span> と </span><code>[mtof]</code><span> で MIDI ノートから周波数へ変換し、画面上の鍵盤で音を鳴らす</span></p></li></ol><p><span>最終的には、</span><strong><span>画面上の鍵盤をクリックすると、楽器ごとに異なる音色とエンベロープで演奏できるパッチ</span></strong><span> を完成させます。これができると、シンプルなソフトシンセサイザの原型が作れます。</span></p><p>&nbsp;</p><h2 id='2-オシレータと波形'><span>2. オシレータと波形</span></h2><h3 id='21-波形と音色'><span>2.1 波形と音色</span></h3><p><span>同じ高さ(周波数)の音でも、</span><strong><span>波形が異なれば異なる音色</span></strong><span> として知覚されます。</span></p><ul><li><p><strong><span>波形</span></strong><span>:時間領域で見た音の形状</span></p></li><li><p><strong><span>倍音構造</span></strong><span>:周波数領域で見た成分の集合</span></p></li></ul><p><span>波形を組み合わせたり加工することによって、特定の倍音構造を持つ音を作ることができます。</span></p><h3 id='22-基本波形と倍音構造'><span>2.2 基本波形と倍音構造</span></h3><p><span>サウンドプログラミングで最もよく使われる4つの基本波形を、倍音構造と聴感の特徴で整理します。</span></p><figure class='table-figure'><table><thead><tr><th><span>波形</span></th><th><span>倍音構造</span></th><th><span>音作りの用途・役割</span></th></tr></thead><tbody><tr><td><strong><span>正弦波・サイン波</span></strong><span>(sine)</span></td><td><span>倍音なし(基本周波数のみ、一番シンプルな音)</span></td><td><strong><span>時報の「ポーン」や聴力検査の音</span></strong><span>。混じりけのない、最も丸くて澄んだ音。シンセベース、サブベースなど。</span></td></tr><tr><td><strong><span>鋸歯波</span></strong><span>(saw)</span></td><td><span>全倍音</span></td><td><strong><span>主役の音(リード)や、分厚いコード、金管楽器系</span></strong><span> などに用いられる。</span></td></tr><tr><td><strong><span>矩形波</span></strong><span>(square)</span></td><td><span>奇数倍音のみ</span></td><td><strong><span>ピコピコした8bitゲーム音、木管楽器系</span></strong><span>、エッジの効いたシンセベースなど。</span></td></tr><tr><td><strong><span>三角波</span></strong><span>(triangle)</span></td><td><span>奇数倍音を少し含む</span></td><td><strong><span>マイルドなベース音、木琴やフルート</span></strong><span> などの柔らかいメロディ音などで利用。</span></td></tr></tbody></table></figure><p><span>それぞれの波形に対応するオブジェクトは、サイン波は </span><code>[osc~]</code><span>、鋸歯波は </span><code>[saw~]</code><span>、矩形波は </span><code>[square~]</code><span>、三角波は </span><code>[tri~]</code><span> になります。</span></p><p><code>[scope~]</code><span> というオブジェクトを使うことで、信号を確認することができます。</span></p><p><img src="./img/2_2_2_基本波形.png" alt="正弦波・鋸歯波・矩形波・三角波の波形図" style="width:80%;" /></p><p style="text-align: center; font-weight: bold;">図2.1 4つの基本波形(それぞれ5Hzに設定し、scope~で可視化)</p><h3 id='23-動作確認波形の聴き比べ'><span>2.3 動作確認:波形の聴き比べ</span></h3><p><span>ここまで紹介したオシレータを </span><strong><span>同じ周波数で差し替えてみて</span></strong><span>、音色の違いを耳で確認しましょう。同じ周波数(例:220Hz)でオシレータを差し替え、音色の違いを聞いてみましょう。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627853px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[osc~ 220]  /  [saw~ 220]  /  [square~ 220]  など</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[*~ 0.5]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[out~]</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 114px;"></div><div class="CodeMirror-gutters" style="display: none; height: 114px;"></div></div></div></pre><p>&nbsp;</p><h2 id='3-エンベロープ'><span>3. エンベロープ</span></h2><h3 id='31-エンベロープについて'><span>3.1 エンベロープについて</span></h3><p><span>ここまで作ったパッチは、DSPをONにすると </span><strong><span>ずっと同じ音量で鳴り続ける</span></strong><span> ものでした。しかし、現実の楽器音は次のような </span><strong><span>時間的な振幅変化</span></strong><span> を持っています。</span></p><ul><li><p><span>音の </span><strong><span>立ち上がり</span></strong><span> がある</span></p></li><li><p><strong><span>持続</span></strong><span> している間も微妙に変化する</span></p></li><li><p><span>音を止めると </span><strong><span>減衰</span></strong><span> していく</span></p></li></ul><p><span>この振幅の時間変化のパターンを </span><strong><span>エンベロープ</span></strong><span>(envelope)と呼びます。エンベロープを与えることで、自然な発音や、楽器らしい表現が得られます。</span></p><h3 id='32-adsrの概念'><span>3.2 ADSRの概念</span></h3><p><span>エンベロープを記述する最も一般的な枠組みが </span><strong><span>ADSR</span></strong><span> です。エンベロープを4つのパラメータで表現します。4つのパラメータを調整することで、振幅の時間変化を作ることができます。</span></p><figure class='table-figure'><table><thead><tr><th><span>パラメータ</span></th><th><span>名称</span></th><th><span>内容</span></th></tr></thead><tbody><tr><td><strong><span>A</span></strong></td><td><span>Attack</span></td><td><span>0から最大値までの </span><strong><span>立ち上がり時間</span></strong></td></tr><tr><td><strong><span>D</span></strong></td><td><span>Decay</span></td><td><span>最大値から持続レベルへの </span><strong><span>減衰時間</span></strong></td></tr><tr><td><strong><span>S</span></strong></td><td><span>Sustain</span></td><td><span>鍵を押している間の </span><strong><span>持続レベル</span></strong></td></tr><tr><td><strong><span>R</span></strong></td><td><span>Release</span></td><td><span>離鍵後、0までの </span><strong><span>減衰時間</span></strong></td></tr></tbody></table></figure><p><span>A / D / R は </span><strong><span>時間</span></strong><span>(ミリ秒)、S は </span><strong><span>振幅レベル</span></strong><span>(0〜1)で指定します。</span></p><p><img src="./img/2_3_2_ADSR図.png" alt="ADSRエンベロープの形状図" style="width:95%;" /></p><p style="text-align: center; font-weight: bold;">図3.1 ADSRエンベロープの形状</p><p><span>ADSR はあくまで </span><strong><span>エンベロープの一例</span></strong><span> で、4つのセグメントから構成される標準的な形を表しています。実際の楽器音はこれより複雑な形をしていることも多く、より自由な形状を扱うには、ブレークポイントを任意に設定できる仕組みが必要になります。本回では、その柔軟な実装ができる </span><code>[envgen~]</code><span> を中心に扱います。</span></p><p>&nbsp;</p><h3 id='33-envgen~-によるエンベロープの生成'><span>3.3 [envgen~] によるエンベロープの生成</span></h3><p><code>[envgen~]</code><span> は、</span><strong><span>任意の形状のエンベロープ</span></strong><span> を生成できるオブジェクトです。エンベロープを </span><strong><span>「時間と値のペアの並び」</span></strong><span> として記述し、各点の間を線形補間して滑らかなエンベロープ信号を出力します。</span></p><h4 id='基本的な使い方'><span>基本的な使い方</span></h4><p><code>[envgen~]</code><span> のメッセージは、次のような書式で記述します。メッセージ・オブジェクトは </span><strong><span>Cmd/Ctrl + 2</span></strong><span> で配置できます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627853px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[100 1 100 0.6 1000 0.6 500 0, bang(</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>メッセージは </span><strong><span>「時間(ms) 値, 時間(ms) 値, ...」</span></strong><span> という並びで、</span><strong><span>最後に </span><code>, bang</code><span> を付けてエンベロープの再生をトリガ</span></strong><span> します。コンマで </span><code>bang</code><span> を区切ることで、「形状の定義」と「再生開始」を1つのメッセージにまとめて送ることができます。</span></p><figure class='table-figure'><table><thead><tr><th><span>数値の位置</span></th><th><span>意味</span></th><th><span>ADSR との対応</span></th></tr></thead><tbody><tr><td><code>100 1</code></td><td><span>100ms かけて 1.0 へ</span></td><td><span>Attack</span></td></tr><tr><td><code>100 0.6</code></td><td><span>100ms かけて 0.6 へ</span></td><td><span>Decay</span></td></tr><tr><td><code>1000 0.6</code></td><td><span>1000ms かけて 0.6 へ(同値で水平)</span></td><td><span>Sustain</span></td></tr><tr><td><code>500 0</code></td><td><span>500ms かけて 0 へ</span></td><td><span>Release</span></td></tr><tr><td><code>, bang</code></td><td><span>エンベロープの再生を開始</span></td><td><span>(トリガ)</span></td></tr></tbody></table></figure><p><span>このメッセージオブジェクトを </span><code>[envgen~]</code><span> の左インレットに繋いだ状態で、</span><strong><span>ランモード（編集モードを抜けた状態）に切り替えてメッセージをクリックする</span></strong><span>と、</span><code>[envgen~]</code><span> からシグナルとして振幅の変化が出力されます。</span></p><p><span>なお、</span><code>[envgen~]</code><span> から出力される時間変化は、数値として確認するなら </span><code>[numbox~]</code><span>、信号の形状（グラフ）として視覚的に確認するなら前述の </span><code>[scope~]</code><span> を用います。</span></p><p><img src="./img/2_3_3_envgen~.png" alt="envgen~で音にエンベロープをかけるパッチ" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図3.2 [envgen~]の出力を確認するパッチ
+</p><p>&nbsp;</p><h4 id='~-の右インレットに接続する'><span>[*~] の右インレットに接続する</span></h4><p><code>[envgen~]</code><span> からの出力を、</span><code>[*~]</code><span>（シグナル乗算）の</span><strong><span>右インレット</span></strong><span>に入力することで、音量をコントロールする「エンベロープ」として利用することができます。</span></p><p><span>第1回では固定の数値を掛けていた </span><code>[*~]</code><span> ですが、</span><strong><span>右インレットに </span><code>[envgen~]</code><span> を繋ぐことで、音量を時間とともに滑らかに変化させることができます。</span></strong></p><p><span>さきほど作った </span><code>[envgen~]</code><span> のパッチに、音源となるオシレータ（</span><code>[osc~]</code><span>）と、スピーカーから音を出すためのオーディオ出力（</span><code>[out~]</code><span>）を加えて、</span><strong><span>図3.2</span></strong><span>のようなパッチを組んでみましょう。実際にメッセージをクリックして、単音が綺麗に消えていくのを鳴らして確認します。</span></p><p><img src="./img/2_3_3_envgen~の基本.png" alt="envgen~で音にエンベロープをかけるパッチ" style="width:80%;" /></p><p style="text-align: center; font-weight: bold;">図3.2 [envgen~]によるエンベロープの基本構成</p><h3 id='34-function-でグラフィカルにエンベロープを描く'><span>3.4 [function] でグラフィカルにエンベロープを描く</span></h3><p><span>数値のリスト（時間と値の組み合わせ）で書くのは正確ですが、形状を直感的に試行錯誤したいときは </span><code>[function]</code><span> を使います。</span><code>[function]</code><span> は、エンベロープの形状を画面上でドラッグして視覚的に編集できるオブジェクトです。</span></p><p><code>[function]</code><span> の使い方:</span></p><figure class='table-figure'><table><thead><tr><th><span>操作</span></th><th><span>動作</span></th></tr></thead><tbody><tr><td><strong><span>クリック</span></strong></td><td><span>新しいブレークポイントを追加</span></td></tr><tr><td><strong><span>ドラッグ</span></strong></td><td><span>既存のポイントを移動</span></td></tr><tr><td><strong><span>ポイント選択→ダブルクリック</span></strong></td><td><span>ポイントを削除</span></td></tr></tbody></table></figure><p><code>[function]</code><span>を用意して、実際に音を鳴らすパッチ（図3.4）を組んでみましょう。</span></p><p><span>図3.4のパッチにおいて、</span><code>[function]</code><span> の左上のインレットに接続されている </span><code>[duration 1000(</code><span> というメッセージは、グラフの横軸全体の長さを何ミリ秒（ms）にするかを設定するものです。図では 1000 に設定されているためグラフの右端がちょうど1000ミリ秒（1秒）となり、グラフで描かれた時間変化が1秒に収まることを意味します。</span></p><p><span>また、図のようにメッセージの後に丸いボタン（</span><code>[bng]</code><span>）を配置しています。メッセージをクリックしただけでは </span><code>[function]</code><span> の見た目が変わるだけで、設定が </span><code>[envgen~]</code><span> に反映されないためです。このように </span><code>[bng]</code><span> を挟んでグラフを叩き直すことで、長さを変えると同時に、最新の形状データを </span><code>[envgen~]</code><span> へ即座に上書き・同期させています。</span></p><p><code>[function]</code><span> のグラフをマウスで編集すると、その形状データは自動的に </span><code>[envgen~]</code><span> に送り込まれて保存されます。そのため、</span><code>[envgen~]</code><span> の左インレットに接続されている</span><code>[bng]</code><span>をクリックした瞬間に、そのエンベロープの再生がスタートして音が鳴る仕組みになっています。</span></p><p><span>また、</span><code>[function]</code><span> の下部から </span><code>[prepend set]</code><span> というオブジェクトを経由して、右下のメッセージボックス（Cmd/Ctrl + 2 で配置）へと線が伸びています。</span><code>[prepend set]</code><span> は、受け取ったデータを後ろのメッセージボックスの中身としてリアルタイムに上書きする役割を持っています。</span></p><p><span>これにより、グラフで描いた形状が、さきほど3.3で学んだ「時間と値の数値リスト」に自動変換されてメッセージボックス内に表示されます。画面上で直感的に描いた点が、内部ではきちんと数値の並びとして処理されていることが目視で確認できるだけでなく、このメッセージボックスに書き込まれた数値をコピーすれば、そのまま別のプリセット（音色呼び出しボタン）として再利用することも可能になります。</span></p><p><img src="./img/2_3_4_envgen~とfunction.png" alt="envgen~とfunctionを組み合わせたパッチ" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図3.4 [function]で形状を編集し、[envgen~]で再生する</p><p>&nbsp;</p><h4 id='クリックノイズへの対策lag~-による平滑化'><span>クリックノイズへの対策:[lag~] による平滑化</span></h4><p><code>[envgen~]</code><span> を連続して再トリガしたり、短いノートを繰り返し送ったりすると、「</span><strong><span>プチッ</span></strong><span>」というクリックノイズが発生することがあります。これは、エンベロープが再トリガされた瞬間に出力値が </span><strong><span>不連続にジャンプ</span></strong><span> することが原因です。</span></p><p><span>これを防ぐには、エンベロープ出力と </span><code>[*~]</code><span> の間に </span><code>[lag~]</code><span> を挟みます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627853px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[envgen~]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[lag~ 10] &nbsp; &nbsp;  ← 10ms の時定数で平滑化</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  [*~]</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 114px;"></div><div class="CodeMirror-gutters" style="display: none; height: 114px;"></div></div></div></pre><p><code>[lag~]</code><span> は ローパスフィルタ で、急激な値の変化を指数的にゆるやかにします。引数は時定数(ミリ秒)で、値が大きいほどクリックは抑えられますが、その分エンベロープの応答も鈍くなります。</span><strong><span>10ms 程度</span></strong><span> が、クリックを抑えつつ Attack の鋭さを保てる目安です。</span></p><p><img src="./img/2_3_3_envgen~とlag~.png" alt="lag~でクリックノイズを抑えたパッチ" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図3.3 [lag~]によるクリックノイズの抑制</p><p>&nbsp;</p><h2 id='4-鍵盤で演奏する'><span>4. 鍵盤で演奏する</span></h2><p><span>ここまでで「</span><code>[bng]</code><span> を押すと単発音が鳴る」段階まで来ました。次に、</span><strong><span>鍵盤のGUIをクリックして演奏する</span></strong><span> 機能を追加します。</span></p><h3 id='41-midiノートと周波数の関係'><span>4.1 MIDIノートと周波数の関係</span></h3><p><span>コンピュータや電子楽器を使った音楽では、鍵盤に対応した値として </span><strong><span>MIDIノート番号</span></strong><span> という整数が用いられます。中央のド(C4)が </span><strong><span>60番</span></strong><span>、その上のレ(D4)が62番、ラ(A4 = 440Hz)が </span><strong><span>69番</span></strong><span> です。1上がるごとに半音上がります。</span></p><p><span>このノート番号を、オシレータが受け付ける </span><strong><span>周波数(Hz)</span></strong><span> に変換するには、</span><code>[mtof]</code><span>(MIDI to frequency)というオブジェクトを使います。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627853px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[69] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ← MIDIノート番号</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[mtof]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[440] &nbsp; &nbsp; &nbsp; &nbsp;  ← 周波数(Hz)に変換される</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 114px;"></div><div class="CodeMirror-gutters" style="display: none; height: 114px;"></div></div></div></pre><h3 id='42-keyboard-オブジェクト'><span>4.2 [keyboard] オブジェクト</span></h3><p><span>画面上にクリックで演奏できる鍵盤UIを表示する </span><code>[keyboard]</code><span> オブジェクトがあります。鍵盤をクリックすると、そのキーに対応する MIDIノート番号と、鍵盤を押した強さや離鍵を表すベロシティ（velocity）の情報が出力されます。</span></p><p><code>[keyboard]</code><span> のアウトレットからは、これら2つの情報がセットになった「リスト」という形式でデータが出力されます。そのため、図2.4.2のように、まずは </span><code>[unpack]</code><span> オブジェクトを使ってノート番号とベロシティの2つの数値に分解します。</span></p><p><span>オブジェクトに </span><code>[unpack f f]</code><span> と記述することで、受け取ったリストを2つのアウトレットからそれぞれ数値（float：浮動小数点数）として出力できます。この場合、左アウトレットからはノート番号が、右アウトレットからはベロシティがそれぞれ出力されます。</span></p><p><span>分解されたノート番号は </span><code>[mtof]</code><span> に送られ、即座に対応する周波数（Hz）へと変換されます。変換された周波数の数値データは、そのまま </span><code>[osc~]</code><span> に繋ぐのではなく、第1回で説明した </span><code>[f2s~]</code><span> オブジェクトを経由させます。</span></p><p><img src="./img/2_4_2_keyboardとmtof.png" alt="lag~でクリックノイズを抑えたパッチ" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図4.2 [keyboard]と[mtof]を使った演奏パッチ</p><blockquote><p><code>[f2s~]</code><span> は引数なしでも動作しますが、図のように </span><code>[f2s~ 10]</code><span> と引数（ミリ秒）を指定することで、変化を滑らかにできます。この数値を（例えば </span><code>200</code><span> や </span><code>500</code><span> などに）あえて大きくすると、ある音高から次の音高へ「ウィーン」と滑らかにピッチが移動するようになります。これはコンピュータ音楽やシンセサイザーの用語で</span><strong><span>ポルタメント（またはグライド）</span></strong><span>と呼ばれる効果です。</span></p></blockquote><p>&nbsp;</p><h3 id='43-鍵盤で楽器音を演奏する'><span>4.3 鍵盤で楽器音を演奏する</span></h3><p><span>ここまでの内容を統合して、画面上の鍵盤をクリックすると楽器音が鳴るパッチ（図4.1）を完成させます。</span></p><p><span>前節で解説した通り、</span><code>[unpack f f]</code><span> の右アウトレットからは、鍵盤を押した時にベロシティ値（1〜127）、鍵盤を離した時（離鍵時）に </span><code>0</code><span> が出力されます。この特性を利用して、「鍵盤が押された瞬間（0以外の値が来たとき）だけエンベロープを起動するトリガー」を作ります。</span></p><p><span>そのために使用するのが </span><strong><code>[sel 0]</code><span>（select）</span></strong><span> オブジェクトです。</span><code>[sel]</code><span> は引数に指定した値（ここでは </span><code>0</code><span>）が入力されると</span><strong><span>左アウトレット</span></strong><span>から </span><code>bang</code><span> を出力し、それ以外の値（ここでは 1〜127）が入力された場合は、その数値をそのまま</span><strong><span>右アウトレット</span></strong><span>から出力する特性を持っています。</span></p><p><span>図4.1のパッチでは、</span><code>[sel 0]</code><span> の右アウトレット（0以外のオンの状態）から出力されたベロシティ値を、丸いバン・ボタン（</span><code>[bng]</code><span>）に入力しています。数値が </span><code>[bng]</code><span> に入ることで、鍵盤を押した瞬間にだけ </span><code>bang</code><span> 信号へと変換され、</span><code>[envgen~]</code><span> のエンベロープ再生をスタートさせる仕組みです。なお、左アウトレット（0のオフの状態）には何も接続していないため、鍵盤を離したときには音量は変化せず、エンベロープは最後まで演奏され続けます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627853px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[keyboard]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; / &nbsp;  \</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  / &nbsp; &nbsp;  \</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">(MIDIノート)  (velocity)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[mtof] &nbsp; &nbsp; &nbsp;  [sel 0] &nbsp; &nbsp; ← 0以外なら左、0なら右に分岐</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; / &nbsp;  \</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[osc~] &nbsp; (オフ) &nbsp; 　(オン)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  | &nbsp;  （不接続） &nbsp;  [bng]</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  | &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; ↓</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 　　[envgen~] &nbsp;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp;  　　　　　　↓</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 295px;"></div><div class="CodeMirror-gutters" style="display: none; height: 295px;"></div></div></div></pre><p>&nbsp;</p><p><span>ここまでの内容を統合して、</span><strong><span>鍵盤をクリックすると楽器音が鳴るパッチ</span></strong><span> を作ります。</span></p><p><img src="./img/2_4_3_鍵盤演奏パッチ.png" alt="鍵盤で楽器音を演奏する完成パッチ" style="width:85%;" /></p><p style="text-align: center; font-weight: bold;">図4.3 第2回の完成パッチ(鍵盤+楽器エンベロープ)</p><h3 id='44-動作確認'><span>4.4 動作確認</span></h3><p><span>ランモードに切り替えて、</span><code>[keyboard]</code><span> の鍵盤をクリックして発音を確認します。</span></p><p><strong><span>確認項目</span></strong><span>:</span></p><ul><li><p><span>異なる鍵を押すと、音の高さが変わる</span></p></li><li><p><span>同じ鍵を押しても、エンベロープのプリセット(ピアノ/オルガン/ストリングス/プラック)を切り替えると音色の印象が変わる</span></p></li><li><p><span>オシレータを </span><code>[osc~]</code><span> から </span><code>[saw~]</code><span>、</span><code>[square~]</code><span>、</span><code>[tri~]</code><span> に差し替えて、波形とエンベロープの組み合わせによる音色の変化を聴き比べる</span></p></li></ul><p>&nbsp;</p><h2 id='まとめ'><span>まとめ</span></h2><p><span>第2回では以下の内容を学びました。</span></p><ul><li><p><span>波形の種類と倍音構造、音色との関係</span></p></li><li><p><code>[osc~]</code><span> / </span><code>[saw~]</code><span> / </span><code>[square~]</code><span> / </span><code>[tri~]</code><span> の使い分け</span></p></li><li><p><span>エンベロープの必要性と ADSR の概念</span></p></li><li><p><code>[envgen~]</code><span> による任意形状のエンベロープの生成</span></p></li><li><p><code>[function]</code><span> を使ったグラフィカルなエンベロープ編集</span></p></li><li><p><span>楽器ごとのエンベロープの特徴と模倣の仕方</span></p></li><li><p><code>[lag~]</code><span> によるクリックノイズの抑制</span></p></li><li><p><span>MIDIノート番号と周波数の関係、</span><code>[mtof]</code><span> による変換</span></p></li><li><p><code>[keyboard]</code><span> による画面鍵盤での演奏</span></p></li></ul></div></div>
+</body>
+</html>
