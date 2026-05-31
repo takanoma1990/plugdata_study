@@ -431,7 +431,7 @@
 #X connect 19 0 20 0;
 #X connect 20 0 4 0;
 #X restore 128 495 pd fig5_2;
-#N canvas 0 22 450 300 fig6_6 1;
+#N canvas 0 22 450 300 fig6_6 0;
 #N canvas 0 22 450 300 scale 0;
 #X obj 230 143 inlet;
 #X obj 230 442 outlet;
@@ -475,7 +475,7 @@
 #X connect 8 0 1 0 32.................P....Du+++OD....w6++++A....;
 #X connect 9 0 1 0 32.................P....Tq+++OD....05++++A....;
 #X restore 230 265 pd scale_major;
-#X obj 230 170 t f f;
+#X obj 230 179 t f f;
 #X connect 0 0 10 0;
 #X connect 2 0 6 0;
 #X connect 3 0 9 0;

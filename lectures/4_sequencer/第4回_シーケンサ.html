@@ -1,0 +1,724 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" href="../../img/pd_study_icon.png" type="image/png">
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; height: auto; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-codemirror">.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: medium !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-width: medium; border-right-style: none; border-right-color: currentcolor; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 660px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    margin-top: 2rem;
+    border-bottom: none;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 2rem;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 1em 0;
+    line-height: 1.5;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+/* キャプション用のクラス */
+#write .caption {
+    display: block;        /* ブロック要素として扱う */
+    text-align: center;    /* 文字を中央寄せ */
+    max-width: 100%;       /* 本文の 650px 制限を無視して横いっぱいに広げる */
+    margin: 10px auto 2em; /* 上に10px、左右中央、下に2emの余白 */
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>第4回_シーケンサ</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='第4回-シーケンサとコード進行'><span>第4回 シーケンサとコード進行</span></h2><p><strong><span>滋賀大学 自主ゼミ「サウンドプログラミング入門」 2026年度 春学期</span></strong></p><p><a href="https://raw.githubusercontent.com/takanoma1990/plugdata_study/refs/heads/main/lectures/4_sequencer/patch/4_sequencer_chord.pd" download="4_sequencer.pd"><span>第4回 サンプルパッチ</span></a></p><blockquote><p><strong><span>サンプルのダウンロード方法</span></strong></p><ul><li><p><strong><span>Mac：</span></strong><span> </span><code>Option (Alt)</code><span> キーを押しながら上のリンクをクリックする</span></p></li><li><p><strong><span>Windows：</span></strong><span> リンクを右クリックして「名前を付けてリンク先を保存」</span></p></li><li><p><span>または、クリックして表示されたテキスト（文字列）をすべてコピーし、テキストエディタに貼り付けて、ファイル名を </span><code>4_sequencer_chord.pd</code><span>（拡張子を </span><code>.pd</code><span>）にして保存すれば、Plugdataで開けるようになります。</span></p></li></ul></blockquote><p>&nbsp;</p><h2 id='1-今回の目的'><span>1. 今回の目的</span></h2><h3 id='11-今回扱うこと'><span>1.1 今回扱うこと</span></h3><p><span>第3回では、</span><code>[rand.i]</code><span> による </span><strong><span>ランダムな自動演奏</span></strong><span> と、それをスケール上の音にスナップするスケーラーを作りました。第4回ではこれを発展させて、</span><strong><span>決まったパターンを繰り返すシーケンサー</span></strong><span> と、</span><strong><span>コード進行を重ねたパッド演奏</span></strong><span> を組み合わせて、メロディと和声を持つ短い曲のパッチを作っていきます。</span></p><ol start='' ><li><p><strong><span>BPM でテンポを指定する</span></strong><span> ― </span><code>[metro]</code><span> の </span><code>permin</code><span> 単位を使って、BPM と音符長を独立に指定する</span></p></li><li><p><strong><span>arrayとtabreadでステップシーケンサ</span></strong><span> ― </span><code>[array]</code><span> に描いた音の並びを </span><code>[counter]</code><span> と </span><code>[tabread]</code><span> で順番に読み出す</span></p></li><li><p><strong><span>【アレンジ1】ミニマル・ミュージックの作成</span></strong><span> ―シーケンスを増やして、ミニマルなパターンを重ねる。リバーブを追加して</span></p></li><li><p><strong><span>【アレンジ2】リバーブの追加</span></strong><span> ― DAWのAUXのようにリバーブを追加し、響きを豊かにする</span></p></li></ol><p><span>最終的には、</span><strong><span>4〜16分音符のメロディシーケンサ</span></strong><span> が同じテンポで同期して鳴る、ジェネレーティブな小品を完成させます。</span></p><h3 id='12-前回の補足funcdtionの初期設定を用意する'><span>1.2 前回の補足：funcdtionの初期設定を用意する</span></h3><p><span>前回利用した </span><code>[envgen~]</code><span> や </span><code>[function]</code><span> について、ファイルを開き直すたびにレガートモードの設定やエンベロープの書き込みをやり直す必要がありました。これを起動時に自動で反映できるようにします。</span></p><p><code>[loadbang]</code><span> は、</span><strong><span>パッチの起動時に自動でbangを出力する</span></strong><span>オブジェクトです。レガートモード用の </span><code>[tgl]</code><span> とエンベロープの長さを指定する </span><code>[duration(</code><span> メッセージの前にそれぞれ </span><code>[loadbang]</code><span> を繋いでおくことで、起動時に自動的にそれらをオンにできます。</span></p><p><span>エンベロープの形状を示すリストを </span><code>[function]</code><span> に反映させるには、</span><code>[initmess]</code><span> を利用します。</span><code>[initmess]</code><span> は </span><strong><span>引数として与えたリストを起動時に出力する</span></strong><span> オブジェクトです。</span><code>[function]</code><span> から出力されているリストを引数として与えておけば、起動時にそのリストが </span><code>[function]</code><span> に流れ込み、エンベロープが自動的に書き込まれます。具体的には、</span><code>[initmess 0 5. 0.5 400 ...]</code><span> のようにエンベロープの情報を引数に入れた状態で </span><code>[function]</code><span> のインレットに繋げておきます。</span></p><p><img src="./img/1_2_loadbangとinitmess.png" alt="ステップシーケンサ全体図" style="width:100%;" /></p><p style="text-align: center; font-weight: bold;">図1.2 [loadbang]と[initmess]による初期設定や初期値の反映</p><p>&nbsp;</p><h2 id='2-metro-でテンポを指定する'><span>2. metro でテンポを指定する</span></h2><h3 id='21-ミリ秒と-bpm-の関係'><span>2.1 ミリ秒と BPM の関係</span></h3><p><span>前回  </span><code>[metro 500]</code><span> と書いてきた数値は、</span><strong><span>「次の bang までのミリ秒」</span></strong><span> を表していました。500 と書けば 500ms ごとに bang が出力されます。</span></p><p><span>しかし、音楽を作るときには「ミリ秒」よりも </span><strong><span>BPM</span></strong><span>（Beats Per Minute、1分間の拍数）で考える方が自然です。BPM と4分音符のミリ秒には、次のような関係があります。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">4分音符の長さ(ms) = 60000 / BPM</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><figure class='table-figure'><table><thead><tr><th><span>BPM</span></th><th><span>4分音符の長さ</span></th></tr></thead><tbody><tr><td><span>60</span></td><td><span>1000 ms</span></td></tr><tr><td><span>100</span></td><td><span>600 ms</span></td></tr><tr><td><span>120</span></td><td><span>500 ms</span></td></tr><tr><td><span>140</span></td><td><span>約 429 ms</span></td></tr></tbody></table></figure><p><span>つまり、これまでの </span><code>[metro 500]</code><span> は </span><strong><span>BPM=120 の4分音符刻み</span></strong><span> に相当します。</span></p><h3 id='22-metro-に-bpm-を直接指定する'><span>2.2 metro に BPM を直接指定する</span></h3><p><code>[metro]</code><span> は実は引数を3つ取れます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro 拍の長さ テンポ値 単位]</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><figure class='table-figure'><table><thead><tr><th><span>引数</span></th><th><span>意味</span></th></tr></thead><tbody><tr><td><span>第1引数</span></td><td><span>拍の長さ（倍率）。右インレットでも設定できる</span></td></tr><tr><td><span>第2引数</span></td><td><span>テンポ値</span></td></tr><tr><td><span>第3引数</span></td><td><span>時間の単位</span></td></tr></tbody></table></figure><p><span>3つ目の引数で </span><strong><span>時間の単位</span></strong><span> を指定できます。音楽で便利なのが </span><code>permin</code><span>（per minute = 1分あたり）です。</span><code>permin</code><span> を指定すると、テンポ値が </span><strong><span>BPM そのもの</span></strong><span> として解釈されます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro 1 120 permin] &nbsp;  ← BPM 120 の4分音符刻み（=500msごとにbang）</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>ここで、第1引数の </span><code>1</code><span> は </span><strong><span>拍の長さ（倍率）</span></strong><span> です。</span><code>120 permin</code><span>（BPM 120）を基準に、その何倍の長さの音符を刻むかを表します。</span><code>1</code><span> なら基準そのまま＝4分音符です。</span></p><blockquote><p><strong><span>補足</span></strong><span>: </span><code>permin</code><span> 以外にも </span><code>permsec</code><span>、</span><code>persec</code><span>、</span><code>persamp</code><span> などが使えますが、音楽用途ではほぼ </span><code>permin</code><span> だけで足ります。</span></p></blockquote><p><img src="./img/2_2_metroをbpmに設定.gif" alt="metroをbpmに設定" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図2.2 [metro]のbpm設定とms間隔設定</p><p>&nbsp;</p><h3 id='23-音符長を変える拍の長さの倍率'><span>2.3 音符長を変える（拍の長さの倍率）</span></h3><p><span>BPM=120 のまま、8分音符や16分音符の刻みにしたい場合は、</span><strong><span>第1引数（拍の長さの倍率）を小さくします</span></strong><span>。8分音符は4分音符の半分の長さなので倍率 </span><code>0.5</code><span>、16分音符は1/4なので倍率 </span><code>0.25</code><span> です。</span></p><figure class='table-figure'><table><thead><tr><th><span>音符長</span></th><th><span>倍率</span></th><th><span>例（BPM=120）</span></th></tr></thead><tbody><tr><td><span>4分音符</span></td><td><span>1</span></td><td><code>[metro 1 120 permin]</code></td></tr><tr><td><span>8分音符</span></td><td><span>0.5</span></td><td><code>[metro 0.5 120 permin]</code></td></tr><tr><td><span>16分音符</span></td><td><span>0.25</span></td><td><code>[metro 0.25 120 permin]</code></td></tr></tbody></table></figure><p><span>倍率が </span><strong><span>小さいほど刻みが速く（細かく）</span></strong><span> なります。拍の「長さ」を指定しているので、長さが短いほど速い、と考えると分かりやすいです。</span></p><p><span>この倍率は、</span><code>[metro]</code><span> の </span><strong><span>右インレット</span></strong><span> からも設定できます（右インレットにマウスを重ねると </span><code>set metronome time for the next tempo</code><span> と表示されます）。右インレットに </span><code>0.5</code><span> を送れば8分音符、</span><code>0.25</code><span> を送れば16分音符の刻みになります。</span></p><h3 id='24-bpmと音符長を動的に切り替える'><span>2.4 BPMと音符長を動的に切り替える</span></h3><p><span>演奏中に </span><strong><span>BPM</span></strong><span> と </span><strong><span>音符長</span></strong><span> を別々に変えられるようにします。</span><code>[metro]</code><span> はこの2つを別の経路で受け取ります。</span></p><p><strong><span>BPMを変える</span></strong><span> には、</span><code>[metro]</code><span> に </span><code>tempo</code><span> メッセージを送ります。第3回で出てきた </span><strong><span>メッセージボックスの </span><code>$1</code></strong><span>（左インレットに流れ込んだ数値に置き換わる引数）を使います。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[120] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ← BPM 用の数値ボックス</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tempo $1 permin( &nbsp; &nbsp;  ← クリックすると "tempo 120 permin" が送られる</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro 1 120 permin] &nbsp; ← 本体（左インレット側）へ</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 114px;"></div><div class="CodeMirror-gutters" style="display: none; height: 114px;"></div></div></div></pre><p><strong><span>音符長を変える</span></strong><span> には、拍の長さの倍率（4分=1、8分=0.5、16分=0.25）を </span><strong><span>右インレット</span></strong><span> に送ります。ただし、「4分=1、8分=2、16分=4」という分割で考える方が直感的なので、分割数を入力して </span><code>[expr 1/$f1]</code><span>（逆数）で倍率に変換します。</span><code>[expr]</code><span> は、</span><strong><span>数式（expression）を書いて計算をするオブジェクト</span></strong><span> です。引数として書いた数式が、左インレットに値が入ってきたタイミングで計算され、結果がアウトレットから出力されます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[1( &nbsp; [2( &nbsp; [4( &nbsp; &nbsp; &nbsp;  ← 1=4分、2=8分、4=16分</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; ↓ &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  └─────┼─────┘</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  [expr 1/$f1] &nbsp; &nbsp; &nbsp; &nbsp;  ← 分割数を倍率に変換（2→0.5、4→0.25）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  [metro 1 120 permin]  ← 右インレットへ</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 159px;"></div><div class="CodeMirror-gutters" style="display: none; height: 159px;"></div></div></div></pre><p><code>[expr 1/$f1]</code><span> は、入力 </span><code>$f1</code><span> の逆数を計算するオブジェクトです。</span><code>2</code><span> を入れれば </span><code>0.5</code><span>、</span><code>4</code><span> を入れれば </span><code>0.25</code><span> が出力され、それが右インレットに渡って音符長が切り替わります。</span></p><p><span>これで、</span></p><ul><li><p><code>[tempo $1 permin(</code><span> で </span><strong><span>BPM</span></strong><span> を変える（即座に反映）</span></p></li><li><p><span>分割数メッセージ </span><code>[1(</code><span> </span><code>[2(</code><span> </span><code>[4(</code><span> で </span><strong><span>音符長</span></strong><span> を変える（次の拍から反映）</span></p></li></ul><p><span>という独立した操作ができます。</span></p><p>&nbsp;</p><p><img src="./img/2_4_metroのBPMと音符長を変える.png" alt="metroのBPMと音符長を変える" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図2.4 metroのBPMと音符長を変えれる仕様に</p><p>&nbsp;</p><h2 id='3-arrayとtabreadでステップシーケンサ'><span>3. arrayとtabreadでステップシーケンサ</span></h2><h3 id='31-ランダムからシーケンスへ'><span>3.1 ランダムからシーケンスへ</span></h3><p><span>第3回で作ったのは、</span><code>[rand.i]</code><span> による </span><strong><span>完全にランダムな自動演奏</span></strong><span> でした。これはこれで面白いのですが、毎回違うフレーズが鳴るため「狙ったメロディを繰り返す」ことはできません。</span></p><p><span>そこでこの章では、</span><strong><span>あらかじめ用意した音の並びを順番に繰り返す</span></strong><span> ステップシーケンサーを作ります。完成イメージは次のような流れです。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.136353px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro] → [counter] → [tabread melody] → [pd scale_major] → [mtof] → [osc~]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↑ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↑</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  ステップを進める &nbsp; 配列から値を読む</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 91px;"></div><div class="CodeMirror-gutters" style="display: none; height: 91px;"></div></div></div></pre><p><code>[array]</code><span> というGUIオブジェクトに音の並びを </span><strong><span>マウスで描き込み</span></strong><span>、それを順番に読み出していく仕組みです。</span></p><h3 id='32-array-でデータを描く'><span>3.2 [array] でデータを描く</span></h3><p><code>[array]</code><span> は、</span><strong><span>複数の数値を格納できる配列（箱の列）</span></strong><span> で、その中身をグラフィカルに表示・編集できるGUIオブジェクトです。</span></p><p><code>[array]</code><span> を配置すると、画面上に四角い領域が現れ、右側のインスペクタで設定を変更できます。今回は次のように設定します。</span></p><figure class='table-figure'><table><thead><tr><th><span>項目</span></th><th><span>設定値</span></th><th><span>意味</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><code>melody</code></td><td><span>配列の名前（他のオブジェクトから参照するときに使う）</span></td></tr><tr><td><span>Size</span></td><td><code>8</code></td><td><span>8個の値を格納できる（=8ステップ）</span></td></tr><tr><td><span>Range</span></td><td><code>50</code><span> 〜 </span><code>90</code></td><td><span>値の範囲（MIDIノート番号として使う）</span></td></tr><tr><td><span>Save contents</span></td><td><span>Yes</span></td><td><span>パッチを保存したときに中身も保存される</span></td></tr><tr><td><span>Draw Style</span></td><td><span>Points</span></td><td><span>各値を点で表示（他に Polygon や Bezier もある）</span></td></tr></tbody></table></figure><p><img src="./img/3_2_1_arrayの配置と設定.png" alt="arrayの配置と設定" style="width:100%;" /></p><p style="text-align: center; font-weight: bold;">図3.2.1 [array] の配置と設定</p><p>&nbsp;</p><p><span>設定が終わったら、</span><code>[array]</code><span> の領域内で </span><strong><span>マウスでドラッグして音の並びを描き込みます</span></strong><span>。縦軸が値（50〜90、つまりMIDIノート番号）、横軸がステップ（0〜7）に対応します。</span></p><p><img src="./img/3_2_2_arrayにメロディを描く.gif" alt="arrayにメロディを描き込む" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図3.2.2 [array] にマウスで音の並びを描き込む</p><h3 id='33-tabread-で配列から読み出す'><span>3.3 [tabread] で配列から読み出す</span></h3><p><code>[tabread]</code><span> は、</span><strong><span>指定した配列の、指定したインデックスの値を読み出す</span></strong><span> オブジェクトです。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tabread melody]</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>引数に配列名（</span><code>melody</code><span>）を指定し、左インレットに整数（インデックス）を入れると、対応する値が出力されます。例えば左インレットに </span><code>3</code><span> を入れれば、</span><code>melody</code><span> の3番目（0から数えて）の値が出てきます。</span></p><h3 id='34-counter-でステップを進める'><span>3.4 [counter] でステップを進める</span></h3><p><code>[counter]</code><span> は、</span><strong><span>bangを受け取るたびにカウントアップし、指定した範囲を繰り返す</span></strong><span> オブジェクトです。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[counter 0 7] &nbsp;  ← 0〜7をループ（8ステップ）</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>引数で最小値と最大値を指定すると、</span><code>bang</code><span> のたびに 0 → 1 → 2 → … → 7 → 0 → 1 → … と循環します。</span></p><blockquote><p><strong><span>補足</span></strong><span>: </span><code>[counter 7]</code><span> と引数1つだけ書いた場合も、plugdataでは最小値が0と解釈されて 0〜7 をループする動作になります。明示的に書きたい場合は </span><code>[counter 0 7]</code><span> とします。</span></p></blockquote><h3 id='35-bngで動作確認'><span>3.5 bngで動作確認</span></h3><p><span>メトロノームを動かす前に、ここでも </span><strong><span>手動で動作確認</span></strong><span> してみましょう。</span><code>[counter]</code><span> の入力に </span><code>[bng]</code><span> ボタンを繋いで、クリックするたびにステップが1つずつ進むことを確認します。出力値はfloatになっているため、</span><code>[tabread melody]</code><span>の出力に</span><code>[int]</code><span>を挟んでおいて整数の値を出力するようにしておきます。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[bng]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[counter 0 7]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[数値ボックス] &nbsp; &nbsp; ← クリックするごとに 0, 1, 2, ..., 7, 0, 1, ... と変化</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tabread melody]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[int]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[float ボックス] &nbsp; &nbsp; ← arrayに描いた値が読み出される</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 273px;"></div><div class="CodeMirror-gutters" style="display: none; height: 273px;"></div></div></div></pre><p><code>[bang]</code><span> を連打して、</span><code>[counter]</code><span> の数値と </span><code>[tabread]</code><span> の出力値が予想通りに変化するか確認しましょう。</span></p><p>&nbsp;</p><p><img src="./img/3_5_[tabread]の値を[counter]で順番に取り出す.gif" alt="[tabread]の値を[counter]で順番に取り出す" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図3.5 [tabread]の値を[counter]で順番に取り出す</p><h3 id='36-シーケンサを組み立てる'><span>3.6 シーケンサを組み立てる</span></h3><p><span>ここまでの部品を組み合わせると、ステップシーケンサーは次のようになります。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.363636px; left: 7.627846px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tgl]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro 1 120 permin]  ← BPM 120 の4分音符刻み</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[counter 0 7] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ← 0〜7をループ</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tabread melody] &nbsp; &nbsp; &nbsp;  ← melody の n 番目の値を読み出す</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[int]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[pd scale] &nbsp; &nbsp; &nbsp;  ← 第3回のスケーラーで音を整える</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp; ↓</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[mtof] &nbsp; [bng]</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp; ↓</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[osc~] &nbsp; [envgen~]</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓ &nbsp; &nbsp; &nbsp; ↓</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[*~]</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 386px;"></div><div class="CodeMirror-gutters" style="display: none; height: 386px;"></div></div></div></pre><p><code>[array]</code><span> に描いた音の並びが、</span><code>[metro]</code><span> のテンポで順番に演奏されます。</span><strong><span>スケーラーを通している</span></strong><span> ので、適当にマウスで描いた値でも自動的にスケール上の音にスナップされ、音楽的に整った響きになります。</span></p><p><img src="./img/3_6_シーケンサ全体図.gif" alt="ステップシーケンサ全体図" style="width:100%;" /></p><p style="text-align: center; font-weight: bold;">図3.6 ステップシーケンサの全体図</p><h3 id='37-シーケンサで遊ぶ'><span>3.7 シーケンサで遊ぶ</span></h3><p><span>シーケンサーが動くようになったら、いろいろな実験ができます。</span></p><ul><li><p><strong><span>テンポを変える</span></strong><span>: BPM 数値ボックスの値や、音符長係数のメッセージで切り替え</span></p></li><li><p><strong><span>arrayのサイズを変える</span></strong><span>: 16ステップにして長いフレーズを作る</span></p></li><li><p><strong><span>arrayの中身を描き直す</span></strong><span>: 階段状、ジグザグ、山型などいろいろ試す</span></p></li><li><p><strong><span>スケーラーを差し替える</span></strong><span>: </span><code>[pd scale_yonanuki]</code><span> や </span><code>[pd scale_okinawa]</code><span> にすると、同じ配列でも雰囲気がまったく変わる</span></p></li></ul><p><span>特に最後の </span><strong><span>「同じパターンをスケールだけ差し替える」</span></strong><span> は、第3回で作ったスケーラーが汎用部品として機能している良い例です。</span></p><p>&nbsp;</p><ul><li><h2 id='4-アレンジ1ミニマルミュージック'><span>4. 【アレンジ1】ミニマル・ミュージック</span></h2><p>&nbsp;</p><h3 id='41-ミニマルミュージックとは'><span>4.1 ミニマル・ミュージックとは</span></h3><p><span>今回作ったシーケンサは、</span><strong><span>短いパターンを繰り返し再生する</span></strong><span>仕組みでした。これを </span><strong><span>複数本走らせて重ねる</span></strong><span> と、20世紀後半に生まれた </span><strong><span>ミニマル・ミュージック</span></strong><span>（minimal music）という音楽の発想に近い響きが作れます。</span></p><p><span>ミニマル・ミュージックは、Steve Reich や Terry Riley、Philip Glass らによって展開された音楽で、特徴をざっくり挙げると次のようになります。</span></p><ul><li><p><span>ごく </span><strong><span>短いフレーズ（パターン）の反復</span></strong><span> を基本単位にする</span></p></li><li><p><span>複数のパターンを </span><strong><span>層（レイヤー）として重ねる</span></strong></p></li><li><p><span>一つひとつは単純でも、重なり合うことで </span><strong><span>複雑で立体的な響き</span></strong><span> が立ち上がる</span></p></li><li><p><span>音を少しずつ足したり引いたりして、</span><strong><span>ゆっくりと全体が変化</span></strong><span> していく</span></p></li></ul><h3 id='42-複数のシーケンサを重ねる'><span>4.2 複数のシーケンサを重ねる</span></h3><p><span>3章で作ったシーケンサを </span><strong><span>3つ並べて同時に走らせます</span></strong><span>。ポイントは、各レイヤーが </span><strong><span>独立した </span><code>[metro]</code><span> と </span><code>[counter]</code><span>、</span><code>[array]</code></strong><span> を持つこと、そして </span><strong><span>長さの異なるパターン</span></strong><span> にすることです。例えば次のように設定します。</span></p><figure class='table-figure'><table><thead><tr><th><span>レイヤー</span></th><th><span>array サイズ</span></th><th><span>counter 範囲</span></th><th><span>metro</span></th></tr></thead><tbody><tr><td><span>レイヤー1</span></td><td><span>4</span></td><td><code>[counter 0 3]</code></td><td><code>[metro 1 120 permin]</code><span>（4分音符）</span></td></tr><tr><td><span>レイヤー2</span></td><td><span>8</span></td><td><code>[counter 0 7]</code></td><td><code>[metro 0.5 120 permin]</code><span>（8分音符）</span></td></tr><tr><td><span>レイヤー3</span></td><td><span>16</span></td><td><code>[counter 0 15]</code></td><td><code>[metro 0.25 120 permin]</code><span>（16分音符）</span></td></tr></tbody></table></figure><p><span>長さの異なるパターンが重なると、組み合わせが一巡するまで響きが変化し続けます（最小公倍数の周期で全体が一巡する）。音色や音域もレイヤーごとに変えると、層がはっきり分かれて聴きやすくなります。</span></p><h3 id='43-tglを共通化して一斉に-startstop-する'><span>4.3 tglを共通化して一斉に start/stop する</span></h3><p><span>各レイヤーは独立した </span><code>[metro]</code><span> を持ちますが、</span><strong><span>演奏のオン・オフだけは1つの </span><code>[tgl]</code><span> から全レイヤーに同時に送りたい</span></strong><span>ので、</span><code>[send]</code><span>/</span><code>[receive]</code><span> で配信します。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.454545px; left: 7.627838px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tgl]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[send seq_start]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[receive seq_start] &nbsp; &nbsp;  [receive seq_start] &nbsp; &nbsp;  [receive seq_start]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[metro 1 120 permin] &nbsp; &nbsp; [metro 0.5 120 permin] &nbsp; [metro 0.25 120 permin]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[counter 0 3] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  [counter 0 7] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  [counter 0 15]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tabread melody1] &nbsp; &nbsp; &nbsp;  [tabread melody2] &nbsp; &nbsp; &nbsp;  [tabread melody3]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[pd scale_major] &nbsp; &nbsp; &nbsp; &nbsp; [pd scale_major] &nbsp; &nbsp; &nbsp; &nbsp; [pd scale_major]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[mtof] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [mtof] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [mtof]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[osc~] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [saw~] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [tri~]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; └────────[+~]─────────────┴────────────────────────┘</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  [out~]</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 565px;"></div><div class="CodeMirror-gutters" style="display: none; height: 565px;"></div></div></div></pre><p><code>[tgl]</code><span> を1回クリックするだけで3つの </span><code>[metro]</code><span> が同時にスタートし、もう一度クリックすれば全部止まります。</span></p><p><span>さらに、</span><code>[tgl]</code><span> がオフになったタイミングで </span><strong><span>すべての </span><code>[counter]</code><span> を 0 にリセット</span></strong><span> する仕組みも入れておきます。リセットを入れないと、前回止めた位置から続いてしまい、レイヤー同士の位置関係も毎回ズレてしまいます。</span><code>[tgl]</code><span> をオフにするたびに全レイヤーが頭出しされていれば、次にオンにしたときに必ずシーケンスの最初の音から演奏が始まります。</span></p><p><span>仕組みは次の通りです。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.454545px; left: 7.627838px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[tgl]</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ├──→ [send seq_start] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  （各 metro へ）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  │</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  └──→ [sel 0] → [set 0( → [send counter_reset] &nbsp; &nbsp;  （各 counter へ）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">（各レイヤー側）</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[receive counter_reset]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">[counter 0 7] の左インレットへ</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 251px;"></div><div class="CodeMirror-gutters" style="display: none; height: 251px;"></div></div></div></pre><p><span> </span><code>[set 0(</code><span> メッセージは、各 </span><code>[counter]</code><span> の値を 0 にセット（リセット）するための指示です。</span><code>set</code><span> メッセージは、カウントアップさせずに値だけを書き換える命令で、これを </span><code>[counter]</code><span> に送ることで現在のカウント値が 0 になります。</span></p><p><code>[send counter_reset]</code><span> / </span><code>[receive counter_reset]</code><span> で各レイヤーの </span><code>[counter]</code><span> に配信すれば、</span><code>[tgl]</code><span> を一度オフにするたびに全レイヤーが頭出しされた状態になります。</span></p><p><img src="./img/4_3_sendでmetroとcouterのリセットを無線化.png" alt=" sendでmetroとcouterをリセット" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図4.3 sendでmetroとcouterのリセット</p><h3 id='44-アレンジしてみる'><span>4.4 アレンジしてみる</span></h3><ul><li><p><span>まずは2レイヤーから始めて、3レイヤーまで増やしてみる</span></p></li><li><p><code>array</code><span> の中身（音の並び）をレイヤーごとに変えて、低音は長くゆったり、高音は短く細かく、のように </span><strong><span>役割を分ける</span></strong></p></li><li><p><span>counter の範囲を </span><code>[counter 0 4]</code><span>（5ステップ）のように </span><strong><span>素数や奇数</span></strong><span> にすると、周期がより複雑にズレて長く飽きない反復になる</span></p></li><li><p><span>音符長の値に0.75や1.5、3などの付点音符の設定を使ってみる</span></p></li></ul><p><span>「単純なパーツの重ね合わせから複雑さが生まれる」というミニマル・ミュージックの面白さを、自分の耳で確かめられます。</span></p><h2 id='5-アレンジ2リバーブをつける'><span>5. 【アレンジ2】リバーブをつける</span></h2><p><span>シーケンサが完成したら、</span><strong><span>リバーブ（残響）</span></strong><span> をかけて音に空間的な広がりを加えてみましょう。</span></p><h3 id='51-リバーブとは'><span>5.1 リバーブとは</span></h3><p><span>リバーブは、</span><strong><span>音が壁や天井に反射して残る響き</span></strong><span> を再現するエフェクトです。原音（ドライ音）に残響成分（ウェット音）を足すことで、音が空間の中で鳴っているような印象になります。教会、ホール、部屋など、空間の大きさや材質によって響き方が変わります。</span></p><p><span>シーケンサの音はそのままだと素朴で硬い印象になりがちですが、リバーブを少し加えるだけで一気に音楽らしい雰囲気になります。</span></p><h3 id='52-hvreverb~-を使う'><span>5.2 hv.reverb~ を使う</span></h3><p><span>plugdataには、</span><code>[hv.reverb~]</code><span> というリバーブのオブジェクトが用意されています。</span><code>[hv.reverb~]</code><span> のhelpパッチには、各パラメータを操作できるGUIがすでに組まれているので、それをそのまま自分のパッチにコピーして使うのが簡単です。</span></p><p><code>[hv.reverb~]</code><span> の右クリックメニューから「Help」を開き、リバーブ本体（</span><code>[hv.reverb~]</code><span>）と各スライダー（</span><code>[hsl]</code><span>）、メッセージボックス（</span><code>[feedback $1(</code><span> など）、初期化用の </span><code>[loadbang]</code><span> をまとめて選択してコピー、自分のパッチにペーストします。</span></p><p><span>シンセの出力からリバーブへの接続は次のようになります。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.454545px; left: 7.627838px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: currentcolor;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: currentcolor;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">（シンセ系統の出力）</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  [*~ 0.5] &nbsp; &nbsp; &nbsp;  ← リバーブへの送り量を調整</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  [hv.reverb~]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  [out~]</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 146px;"></div><div class="CodeMirror-gutters" style="display: none; height: 146px;"></div></div></div></pre><p><code>[*~ 0.5]</code><span> は、リバーブに送る前に音量を半分にすることで、</span><strong><span>リバーブのかかり具合を調整</span></strong><span> しています。値を小さくすればリバーブが控えめに、大きくすればより深くかかります。</span></p><h3 id='53-パラメータの意味'><span>5.3 パラメータの意味</span></h3><p><code>[hv.reverb~]</code><span> には8つのパラメータがあり、それぞれ </span><code>[hsl]</code><span>（水平スライダー）で操作できます。</span></p><figure class='table-figure'><table><thead><tr><th><span>パラメータ</span></th><th><span>意味</span></th><th><span>値の例</span></th></tr></thead><tbody><tr><td><strong><span>feedback</span></strong></td><td><span>残響の長さ（大きいほど長く残る）</span></td><td><span>95（長め）</span></td></tr><tr><td><strong><span>dry-gain</span></strong></td><td><span>原音のレベル（dB）</span></td><td><span>0（原音そのまま）</span></td></tr><tr><td><strong><span>wet-gain</span></strong></td><td><span>残響音のレベル（dB）</span></td><td><span>93（強め）</span></td></tr><tr><td><strong><span>lowcut</span></strong></td><td><span>低域カットの周波数（Hz、これ以下を減衰）</span></td><td><span>5</span></td></tr><tr><td><strong><span>highcut</span></strong></td><td><span>高域カットの周波数（Hz、これ以上を減衰）</span></td><td><span>24000</span></td></tr><tr><td><strong><span>crossfreq</span></strong></td><td><span>低域と高域の境目（Hz、damp が効き始める周波数）</span></td><td><span>3000</span></td></tr><tr><td><strong><span>damp</span></strong></td><td><span>高域の減衰量（大きいほど高域が早く減衰し、自然な響きになる）</span></td><td><span>60</span></td></tr><tr><td><strong><span>predelay_ms</span></strong></td><td><span>原音とリバーブ開始の時間差（ms）</span></td><td><span>0</span></td></tr></tbody></table></figure><p><span>スライダーを動かしてリバーブの響きがどう変わるか、いろいろ試してみてください。特に </span><strong><span>feedback</span></strong><span>（残響の長さ）と </span><strong><span>damp</span></strong><span>（高域の減衰）を変えるだけで、教会のような長い響きから、こもった部屋鳴りのような響きまで作り分けられます。</span></p><p><img src="./img/5_3_リバーブの追加.png" alt=" リバーブの追加" style="width:90%;" /></p><p style="text-align: center; font-weight: bold;">図5.3 リバーブの追加</p><h2 id='まとめ'><span>まとめ</span></h2><ul><li><p><code>[loadbang]</code><span> と </span><code>[initmess]</code><span> による </span><strong><span>起動時の初期設定</span></strong></p></li><li><p><code>[metro]</code><span> の </span><code>permin</code><span> 単位による </span><strong><span>BPM ベース</span></strong><span> のテンポ指定</span></p></li><li><p><code>[tempo $1 permin(</code><span> メッセージ（BPM）と </span><code>[expr 1/$f1]</code><span>（分割数→拍の長さの倍率）を組み合わせた、</span><strong><span>BPM と音符長の独立制御</span></strong></p></li><li><p><code>[array]</code><span> と </span><code>[tabread]</code><span>、</span><code>[counter]</code><span> による </span><strong><span>ステップシーケンサ</span></strong></p></li><li><p><span>長さの違うパターンを複数レイヤー重ねる、</span><strong><span>ミニマル・ミュージック的な多層構造</span></strong></p></li><li><p><code>[hv.reverb~]</code><span> による </span><strong><span>リバーブ（残響）</span></strong><span> の付加と、</span><code>[hsl]</code><span> を使ったパラメータ操作</span></p></li></ul></li></ul></div></div>
+</body>
+</html>
