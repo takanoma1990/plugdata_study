@@ -176,7 +176,7 @@
 #X connect 34 0 26 0;
 #X connect 35 0 2 0;
 #X restore 259 237 pd fig3_6;
-#N canvas 0 22 450 300 fig5 1;
+#N canvas 0 22 450 300 fig5 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array melody_fig5 16 float 3;
 #A 0 62.5714 83.4286 73.7143 62 80.5714 63.1429 69.1429 59.4286 73.7143 79.1429 64.2857 74.8571 69.1429 57.4286 80.2857 70;
@@ -186,7 +186,7 @@
 #X obj 117 395 int;
 #X floatatom 117 324 5 0 0 0 - - - 12;
 #X obj 117 184 metro 1 120 permin, f 31;
-#X obj 117 130 tgl 25 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737 0 1;
+#X obj 117 136 tgl 25 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737 0 1;
 #X obj 117 229 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
 #X msg 171 136 tempo \$1 permin;
 #X msg 315 95 1;
@@ -672,6 +672,9 @@
 #X obj 963 338 receive counter_reset;
 #X obj 1766 338 receive counter_reset;
 #X obj 99 382 counter 0 3;
+#X text 1706 188 16分刻みのシーケンサ, f 18;
+#X text 906 188 8分刻みのシーケンサ, f 18;
+#X text 99 188 4分刻みのシーケンサ, f 18;
 #X connect 1 0 12 0;
 #X connect 2 0 1 0;
 #X connect 3 0 34 0;
