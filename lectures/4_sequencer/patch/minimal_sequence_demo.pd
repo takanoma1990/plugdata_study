@@ -413,7 +413,11 @@
 #X msg 1677 128 read sequence2.txt melody_fig5;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #X msg 1930 128 read sequence3.txt melody_fig5;
+=======
+#X msg 1918 128 read sequence3.txt melody_fig5;
+>>>>>>> 54b8828942cc6ee2d04b7753e8d9b66fbea4cce7
 =======
 #X msg 1918 128 read sequence3.txt melody_fig5;
 >>>>>>> 54b8828942cc6ee2d04b7753e8d9b66fbea4cce7
