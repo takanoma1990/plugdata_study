@@ -18,9 +18,9 @@
 #X obj 98 656 *~;
 #X obj 99 187 route x y on;
 #X floatatom 226 267 5 0 0 0 - - - 12;
-#X obj 731 532 tgl 25 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737 0 1;
-#X obj 731 599 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
-#X obj 731 657 vline~;
+#X obj 781 532 tgl 25 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737 0 1;
+#X obj 781 599 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
+#X obj 781 657 vline~;
 #X obj 226 235 change;
 #X obj 199 740 hv.reverb~;
 #X obj 199 699 *~ 0.5;
@@ -132,7 +132,7 @@
 #X obj 648 349 scale 0 1 90 60;
 #X obj 580 376 f2s~ 50;
 #X obj 226 376 f2s~ 50;
-#X obj 731 573 metro 0.5 120 permin;
+#X obj 781 573 metro 0.5 120 permin;
 #N canvas 0 22 450 300 scale 0;
 #X obj 230 143 inlet;
 #X obj 230 467 outlet;
@@ -220,7 +220,7 @@
 #X floatatom 648 401 5 0 0 0 - - - 12;
 #X msg 294 378 set \$1;
 #X floatatom 294 404 5 0 0 0 - - - 12;
-#X msg 731 631 1 5 \, 0 100 4;
+#X msg 781 631 1 5 \, 0 100 4;
 #X obj 280 588 initmess 0.9;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -246,8 +246,8 @@
 #X connect 18 0 50 0;
 #X connect 19 0 51 0;
 #X connect 20 0 57 0;
-#X connect 20 0 56 0 64......................P4+++O.....T9+++O4+++eW++++S9+++20+++eI++++L4+++Wx+++OS9+++k7+++C;
-#X connect 20 0 54 0 48......................j9+++O.....o++++Kx+++uq++++h7+++65+++uH++++;
+#X connect 20 0 54 0 48......................j9+++O.....o++++Cx+++uq++++f7+++65+++uH++++;
+#X connect 20 0 56 0 64......................b6+++O.....29+++Cx++++J++++f7+++ux+++eH++++Z3+++Gx+++uF9+++k7+++C;
 #X connect 21 0 16 1 48......................Lt+++O.....i6+++29+++ew8+++s++++Wb+++e6++++;
 #X connect 21 0 39 1 48......................f6+++O.....39+++29++++I++++s++++ex+++e6++++;
 #X connect 22 0 18 0;
