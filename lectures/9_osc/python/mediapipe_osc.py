@@ -19,16 +19,6 @@ GREEN = (0, 255, 0)
 RED = (0, 0, 255)      # OpenCV の色は BGR の順
 WHITE = (255, 255, 255)
 
-# 21点をどう線で結ぶか（手首から各指へ）
-CONNECTIONS = [
-    (0, 1), (1, 2), (2, 3), (3, 4),          # 親指
-    (0, 5), (5, 6), (6, 7), (7, 8),          # 人差し指
-    (5, 9), (9, 10), (10, 11), (11, 12),     # 中指
-    (9, 13), (13, 14), (14, 15), (15, 16),   # 薬指
-    (13, 17), (17, 18), (18, 19), (19, 20),  # 小指
-    (0, 17),                                 # 手のひら
-]
-
 
 def clamp01(value):
     """手が画面からはみ出すと 0〜1 の外に出るので、切り詰めておく"""
@@ -80,18 +70,12 @@ while capture.isOpened():
         for landmark in hand:
             points.append((int(landmark.x * w), int(landmark.y * h)))
 
-        # 骨格の線
-        for start, end in CONNECTIONS:
-            cv2.line(canvas, points[start], points[end], GREEN, 2)
 
         # 各点。人差し指の先だけ赤くする
         for i, point in enumerate(points):
             color = RED if i == INDEX_TIP else GREEN
-            radius = 8 if i == INDEX_TIP else 5
+            radius = 20 if i == INDEX_TIP else 15
             cv2.circle(canvas, point, radius, color, -1)
-
-        cv2.putText(canvas, label, (points[0][0] - 20, points[0][1] + 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, WHITE, 1)
 
     # 手が検出されているかどうかを毎フレーム送る。
     # 一瞬の検出漏れで音が切れないよう、LOST_LIMIT フレームぶんの猶予をもたせる。
